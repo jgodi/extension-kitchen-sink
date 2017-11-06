@@ -4,7 +4,7 @@
     "name": "platform-extension-starter"
   },
   "apps": [{
-    "root": "src",
+    "root": "public",
     "outDir": "dist",
     "assets": [
       "assets",
@@ -43,10 +43,10 @@
     }
   },
   "lint": [{
-      "project": "src/tsconfig.app.json"
+      "project": "public/tsconfig.app.json"
     },
     {
-      "project": "src/tsconfig.spec.json"
+      "project": "public/tsconfig.spec.json"
     },
     {
       "project": "e2e/tsconfig.e2e.json"
