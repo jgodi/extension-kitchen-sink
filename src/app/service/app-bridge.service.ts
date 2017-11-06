@@ -1,14 +1,12 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {AppBridge} from 'novo-elements';
+import { AppBridge } from 'novo-elements';
 
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AppBridgeService {
-
   private bridge: AppBridge;
-
   private registered: boolean = false;
 
   constructor() {
@@ -17,22 +15,21 @@ export class AppBridgeService {
     this.register();
   }
 
-  execute(execute: (bridge: AppBridge) => void) {
+  public execute(execute: (bridge: AppBridge) => void): void {
     if (this.registered) {
       execute(this.bridge);
     } else {
-      const interval = setInterval(() => {
+      const interval: any = setInterval(() => {
         if (this.registered) {
           clearInterval(interval);
-
           execute(this.bridge);
         }
       }, 500);
     }
   }
 
-  private register() {
-    this.bridge.register(environment.appBridgeConfig).then( () => {
+  private register(): void {
+    this.bridge.register(environment.appBridgeConfig).then(() => {
       this.registered = true;
     }, () => {
       setTimeout(() => {
@@ -40,5 +37,4 @@ export class AppBridgeService {
       }, 500);
     });
   }
-
 }

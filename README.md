@@ -1,12 +1,10 @@
-# Platform Extension Starter
+# Extension Kitchen Sink
 
-> Starter repository for extensions for Bullhorn 2017
-
-* MASTER BRANCH == static version
-* FULLSTACK == full stack version (STILL TODO)
+> Test bed for everything that you can do with App Bridge from NovoElements!!
 
 ## Getting Started
 
-* Clone This
-* `npm install` or `yarn install`
-* `npm start`
+  npm install
+  npm start
+
+Install as custom tab / card / menu action inside of Bullhorn & Test away!

@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<h2>Extension Kitchen Sink</h2>
+
+<h4>Main App Bridge Methods:</h4>
+
+<button theme="primary" (click)="update()" data-automation-id="update">Update</button>
+<button theme="primary" (click)="refresh()" data-automation-id="refresh">Refresh</button>
+<button theme="primary" (click)="close()" data-automation-id="close">Close</button>
+<button theme="primary" (click)="pin()" data-automation-id="pin">Pin</button>
+
+<h4>Opening Stuffz:</h4>
+<p>Caution: These are slightly different for SR vs. Novo!</p>
+<p>SR only Records/Add/FastAdd are supported! Novo opening any app is supported!</p>
+<novo-form [form]="openForm" layout="vertical">
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="appControl"></novo-control>
+  </div>
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="entityTypeControl"></novo-control>
+  </div>
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="entityIdControl"></novo-control>
+  </div>
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="tabControl"></novo-control>
+  </div>
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="criteriaControl"></novo-control>
+  </div>
+  <div class="novo-form-row">
+    <novo-control [form]="openForm" [control]="keywordsControl"></novo-control>
+  </div>
+</novo-form>
+<button theme="primary" (click)="open(openForm)" data-automation-id="open">Open</button>

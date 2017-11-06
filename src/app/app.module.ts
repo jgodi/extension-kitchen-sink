@@ -1,41 +1,24 @@
-// NG2
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-// Vendor
-import { NovoElementsModule } from 'novo-elements';
-// APP
+import { NovoElementsModule, NovoElementProviders } from 'novo-elements';
+
 import { AppComponent } from './app.component';
 import { AppBridgeService } from './service/app-bridge.service';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'sample', pathMatch: 'full' },
-  { path: 'sample', loadChildren: './sample/sample.module#SampleModule' }
-];
-
 @NgModule({
   declarations: [
-    // Main Entry Component
-    AppComponent
-    // Modals/Popovers
+    AppComponent,
   ],
   imports: [
-    // NG2
     BrowserModule,
-    RouterModule.forRoot(routes),
-    // Vendor
     NovoElementsModule,
-    // APP
+    NovoElementProviders.forRoot(),
   ],
   providers: [
-    AppBridgeService
-    // Vendor Overrides
-    // APP
+    AppBridgeService,
   ],
   bootstrap: [
-    // Main Entry Component
-    AppComponent
-    // Modals/Popovers
-  ]
+    AppComponent,
+  ],
 })
 export class AppModule { }
