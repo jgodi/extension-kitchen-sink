@@ -11,7 +11,6 @@ export class AppBridgeService {
 
   constructor() {
     this.bridge = new AppBridge(environment.appBridgeConfig.title);
-    this.bridge.tracing = true;
     this.register();
   }
 

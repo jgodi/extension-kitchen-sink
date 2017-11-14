@@ -118,7 +118,7 @@ export class AppComponent {
       if (this.openForm.value['entity']) {
         this.appBridge.execute((bridge: AppBridge) => {
           bridge.open({
-            type: 'add',
+            type: 'fast-add',
             entityType: this.openForm.value['entity'],
           }).then((success: any) => {
             console.log('[AppComponent] - Open Success!', success); // tslint:disable-line
