@@ -93,6 +93,23 @@ export class AppComponent {
     });
   }
 
+  public openListAndClose(): void {
+    this.appBridge.execute((bridge: AppBridge) => {
+      bridge.openList({
+        type: 'Candidate',
+      }).then((success: any) => {
+        console.log('[AppComponent] - Open Success!', success); // tslint:disable-line
+        bridge.close().then((ss: any) => {
+          console.log('[AppComponent] - Close Success!', ss); // tslint:disable-line
+        }, (error: any) => {
+          console.log('[AppComponent] - Close Error!', error); // tslint:disable-line
+        });
+      }, (error: any) => {
+        console.log('[AppComponent] - Open Error!', error); // tslint:disable-line
+      });
+    });
+  }
+
   public open(): void {
     if (this.openForm.value['app'] === 'Record') {
       if (this.openForm.value['entity'] && this.openForm.value['id']) {
